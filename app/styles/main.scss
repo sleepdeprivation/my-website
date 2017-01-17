@@ -1,9 +1,16 @@
 $icon-font-path: '../fonts/';
+$blue-color: #353470;
+$link-color: #e64407;
+$link-hover: #e88c25;
+$link-visited: #39e0f0;
+$font-color: #FFB564;
+$background-color-page: #f0eff3;
+$black-color: #0d1910;
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
-
+@import "_mixins.scss";
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -11,11 +18,16 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
+
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  //padding-top: 20px;
+  font-family: 'Open Sans';
+  background-color: $background-color-page;
+  color: $black-color !important;
+  //padding-bottom: 20px;
 }
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -23,7 +35,70 @@ body {
 .footer {
   padding-left: 15px;
   padding-right: 15px;
+  .text-muted{
+  	font-family: 'Droid Sans Mono', monospace;
+  	color: $black-color;
+  }
 }
+
+.marketing{
+	margin-top: 0 !important;
+	padding-bottom: 1em;
+	@media screen and (max-width: 768px) {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.left-col{
+	background-color: $blue-color;
+	color: $font-color;
+	a{
+		color: $link-color;
+		&:visited{
+			color: $link-visited;
+		}
+		&:hover{
+			color: $link-hover;
+		}
+	}
+	
+	@media screen and (max-width: 768px) {
+		padding-bottom: 12px;
+		h1{
+			  	margin: 0;
+			  	padding: 0;
+		}
+  	}
+}
+
+.right-col{
+
+}
+
+.outer-header{
+	background-color: #DFE3E9;
+	font-family: 'Cutive Mono', monospace;
+	border-bottom: 6px solid $blue-color;
+}
+
+.lower-body{
+	//background-color: #5958BB;
+	//color: white;
+	margin-left: 0;
+  @media screen and (max-width: 768px) {
+  	margin: 0;
+  	padding: 0;
+  }
+}
+
+
+.lead{
+	h1{
+		font-family: 'Droid Sans Mono', monospace;
+	}
+}
+
 
 /* Custom page header */
 .header {
@@ -40,9 +115,19 @@ body {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
+  padding-top: 12px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: 6px solid #f84728;
+  p{
+  	margin-left: 1em;
+  	font-size: 16px;
+  	a{
+  		color: #f84728;
+  		&:hover{
+  			color: #f82871;
+  		}
+  	}
+  }
 }
 
 .container-narrow > hr {
@@ -61,9 +146,13 @@ body {
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+  //margin: 40px 0;
   p + h4 {
     margin-top: 28px;
+  }
+  
+  div h2{
+  	font-family: 'Droid Serif', serif;
   }
 }
 
